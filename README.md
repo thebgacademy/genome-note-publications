@@ -1,5 +1,7 @@
 # genome-note-publications
 
+#BGA24/sessions #GitPod #Pipeline #Nextflow
+
 This session is part of [**Biodiversity Genomics Academy 2024**](https://thebgacademy.org)
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/thebgacademy/genome-note-publications) 
