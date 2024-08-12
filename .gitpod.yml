@@ -1,4 +1,30 @@
-image: nfcore/gitpod:latest
+image: gitpod/workspace-full-vnc
+# Update 7th September to reflect code base changes
+ports:
+- name: something
+  description: something
+  port: 3000
+  onOpen: open-browser
+  visibility: public
+
+tasks:
+  - name: Install Nextflow
+  # https://www.nextflow.io/docs/latest/getstarted.html
+    init: |
+      cd /workspace/treeval-curation/
+      
+      wget -qO- https://get.nextflow.io | bash
+
+      chmod +x nextflow
+
+      sudo mv nextflow /usr/local/bin
+
+  - name: Install Genome Note Pipeline
+  # https://github.com/sanger-tol/curationpretext
+    init: |
+      cd /workspace/treeval-curation/
+
+      git clone -b 1.2.1 https://github.com/sanger-tol/genomenote.git
 
 vscode:
   extensions: # based on nf-core.nf-core-extensionpack
