@@ -10,11 +10,13 @@ This session is part of [**Biodiversity Genomics Academy 2024**](https://thebgac
 
 Wellcome Sanger Institute
 
-- Matthieu Muffato, PhD
+- [Bethan Yates](https://uk.linkedin.com/in/bethanyates)
+- [Tyler Chafin](https://www.sanger.ac.uk/person/chafin-tyler/)
+- [Matthieu Muffato](https://www.sanger.ac.uk/person/muffato-matthieu/)
 
 ## Description
 
-In this session you will learn how to automatically generate content for genome note publications using our suite of analysis pipelines https://pipelines.tol.sanger.ac.uk/
+In this session you will learn how to automatically generate content for genome note publications using our suite of analysis pipelines <https://pipelines.tol.sanger.ac.uk/>.
 
 ## Prerequisites
 
