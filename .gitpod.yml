@@ -113,6 +113,7 @@ tasks:
   - name: Install LibreOffice # VSCode extensions arn't working
     command: |
       sudo apt-get update && sudo apt-get install libreoffice -y
+      gp sync-done bundle
 
   - name: MAIN - TERMINAL TO USE
     # Installing click and ruff in the mamba environment didn't work for some reason
@@ -121,9 +122,9 @@ tasks:
     init: gp sync-await bundle # Wait for previous 'inits' to complete
     command: |
       cd /workspace
-      chmod a+x *.pl *.py
-      /workspace/mambaforge/bin/mamba init bash
+      sleep 5
       source ${HOME}/.bashrc
+      /workspace/mambaforge/bin/mamba init bash
       mamba activate btk
 
       echo "WELCOME TO THE GENOME_NOTE_PUBLICATIONS SESSION!"
