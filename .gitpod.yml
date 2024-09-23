@@ -98,21 +98,21 @@ tasks:
       genomehubs/blobtoolkit-viewer:$DOCKERVERSION && gp preview $VIEWERURL/view/all#Datasets
       /workspace/mambaforge/bin/mamba init bash
       source ${HOME}/.bashrc
-      gp sync-await step2
 
   - name: Install Genome Note Pipeline
   # https://github.com/sanger-tol/curationpretext
     init: |
       cd /workspace/genome-note-publications
       git clone -b 1.2.2 https://github.com/sanger-tol/genomenote.git
+       gp sync-done step2
 
   - name: Open Tutorial Page
     init: |
       gp preview https://www.thebgacademy.org/BGA24/sessions/genome-note-publications-24
 
   - name: Install LibreOffice # VSCode extensions arn't working
+    init: gp sync-await step2
     command: |
-      gp sync-await step2
       sudo apt-get update && sudo apt-get install libreoffice -y
       gp sync-done step3
 
@@ -130,6 +130,7 @@ tasks:
       pip3 install "blobtoolkit[full]"
 
       echo "WELCOME TO THE GENOME_NOTE_PUBLICATIONS SESSION!"
+      
 
 vscode:
   extensions: # based on nf-core.nf-core-extensionpack
