@@ -125,6 +125,9 @@ tasks:
       sleep 5
       source ${HOME}/.bashrc
       /workspace/mambaforge/bin/mamba init bash
+
+      sleep 5
+      source ${HOME}/.bashrc
       mamba activate btk
 
       echo "WELCOME TO THE GENOME_NOTE_PUBLICATIONS SESSION!"
