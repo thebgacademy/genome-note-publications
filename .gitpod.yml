@@ -104,7 +104,6 @@ tasks:
   # https://github.com/sanger-tol/curationpretext
     init: |
       cd /workspace/genome-note-publications
-
       git clone -b 1.2.2 https://github.com/sanger-tol/genomenote.git
 
   - name: Open Tutorial Page
@@ -113,8 +112,9 @@ tasks:
 
   - name: Install LibreOffice # VSCode extensions arn't working
     command: |
+      gp sync-await step2
       sudo apt-get update && sudo apt-get install libreoffice -y
-      gp sync-done bundle
+      gp sync-done step3
 
   - name: MAIN - TERMINAL TO USE
     # Installing click and ruff in the mamba environment didn't work for some reason
