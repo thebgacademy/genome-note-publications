@@ -126,6 +126,8 @@ tasks:
       source ${HOME}/.bashrc
       mamba activate btk
 
+      pip3 install "blobtoolkit[full]"
+
       echo "WELCOME TO THE GENOME_NOTE_PUBLICATIONS SESSION!"
 
 vscode:
