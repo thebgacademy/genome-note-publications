@@ -99,9 +99,7 @@ tasks:
       -e BTK_MESSAGE= \
       --name btk-viewer-$PORT \
       genomehubs/blobtoolkit-viewer:$DOCKERVERSION && gp preview $VIEWERURL/view/all#Datasets
-
       /workspace/mambaforge/bin/mamba init bash
-
       source ${HOME}/.bashrc
       gp sync-done bundle
 
@@ -126,10 +124,9 @@ tasks:
       chmod a+x *.pl *.py
       /workspace/mambaforge/bin/mamba init bash
       source ${HOME}/.bashrc
-      mamba activate btk
+      conda activate btk
       pip install "blobtoolkit[full]"
       export PATH=/workspace:$PATH
-      clear
       echo "WELCOME TO THE GENOME_NOTE_PUBLICATIONS SESSION!"
 
 vscode:
@@ -137,7 +134,7 @@ vscode:
     - codezombiech.gitignore # Language support for .gitignore files
     # - cssho.vscode-svgviewer                 # SVG viewer
     - esbenp.prettier-vscode # Markdown/CommonMark linting and style checking for Visual Studio Code
-    - eamodio.gitlens # Quickly glimpse into whom, why, and when a line or code block was changed
+    - shahilkumar.docxreader
     - EditorConfig.EditorConfig # override user/workspace settings with settings found in .editorconfig files
     - Gruntfuggly.todo-tree # Display TODO and FIXME in a tree view in the activity bar
     - mechatroner.rainbow-csv # Highlight columns in csv files in different colors
