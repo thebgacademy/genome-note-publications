@@ -106,6 +106,18 @@ tasks:
       git clone -b 1.2.2 https://github.com/sanger-tol/genomenote.git
        gp sync-done step2
 
+  - name: Pre-download some data
+  # https://github.com/sanger-tol/curationpretext
+    init: |
+      mkdir -p /workspace/genome-note-publications/data
+      cd /workspace/genome-note-publications/data
+      wget https://tolit.cog.sanger.ac.uk/test-data/Epithemia_sp._CRS-2021b/assembly/release/uoEpiScrs1.1/insdc/GCA_946965045.1.fasta.gz
+      gunzip GCA_946965045.1.fasta.gz
+      wget https://tolit.cog.sanger.ac.uk/test-data/Epithemia_sp._CRS-2021b/genomic_data/uoEpiScrs1/pacbio/m64228e_220617_134154.ccs.bc1015_BAK8B_OA--bc1015_BAK8B_OA.rmdup.subset.bam
+      wget https://tolit.cog.sanger.ac.uk/test-data/Epithemia_sp._CRS-2021b/genomic_data/uoEpiScrs1/pacbio/m64016e_220621_193126.ccs.bc1008_BAK8A_OA--bc1008_BAK8A_OA.rmdup.subset.bam
+      wget https://tolit.cog.sanger.ac.uk/test-data/Epithemia_sp._CRS-2021b/analysis/uoEpiScrs1.1/read_mapping/hic/GCA_946965045.1.unmasked.hic.uoEpiScrs1.subsampled.cram
+      wget https://tolit.cog.sanger.ac.uk/test-data/Epithemia_sp._CRS-2021b/analysis/uoEpiScrs1.1/read_mapping/hic/GCA_946965045.1.unmasked.hic.uoEpiScrs1.subsampled.bam
+
   - name: Open Tutorial Page
     init: |
       gp preview https://www.thebgacademy.org/BGA24/sessions/genome-note-publications-24
