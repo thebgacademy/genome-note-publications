@@ -125,8 +125,7 @@ tasks:
       /workspace/mambaforge/bin/mamba init bash
       source ${HOME}/.bashrc
       mamba activate btk
-      pip install "blobtoolkit[full]"
-      export PATH=/workspace:$PATH
+
       echo "WELCOME TO THE GENOME_NOTE_PUBLICATIONS SESSION!"
 
 vscode:
