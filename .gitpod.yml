@@ -95,7 +95,7 @@ tasks:
       -e BTK_GDPR_URL= \
       -e BTK_MESSAGE= \
       --name btk-viewer-$PORT \
-      genomehubs/blobtoolkit-viewer:$DOCKERVERSION && gp preview $VIEWERURL/view/all#Datasets
+      genomehubs/blobtoolkit-viewer:$DOCKERVERSION && gp preview --external $VIEWERURL/view/all#Datasets 
       /workspace/mambaforge/bin/mamba init bash
       source ${HOME}/.bashrc
 
