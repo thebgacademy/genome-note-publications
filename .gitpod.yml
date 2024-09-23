@@ -57,6 +57,7 @@ tasks:
       DOCKERVERSION=latest
       docker pull genomehubs/blobtoolkit-api:$DOCKERVERSION
       docker pull genomehubs/blobtoolkit-viewer:$DOCKERVERSION
+      gp sync-done bundle
   
   - name: SETUP - docker run
     command: |
@@ -113,7 +114,7 @@ tasks:
 
   - name: Open Tutorial Page
     init: |
-      gp preview https://thebgacademy.org/BGA24/Session-Documents/TreeVal/TreeVal-Tutorial
+      gp preview https://www.thebgacademy.org/BGA24/sessions/genome-note-publications-24
 
   - name: MAIN - TERMINAL TO USE
     # Installing click and ruff in the mamba environment didn't work for some reason
@@ -127,9 +128,7 @@ tasks:
       source ${HOME}/.bashrc
       mamba activate btk
       pip install "blobtoolkit[full]"
-
       export PATH=/workspace:$PATH
-      gp preview https://www.thebgacademy.org/BGA24/sessions/genome-note-publications-24
       clear
       echo "WELCOME TO THE GENOME_NOTE_PUBLICATIONS SESSION!"
 
