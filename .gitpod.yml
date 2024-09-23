@@ -19,7 +19,7 @@ tasks:
   - name: Install HiGlass
   # https://docs.higlass.io/tutorial.html
     init: |
-      cd /workspace/treeval-curation/
+      cd /workspace/genome-note-publications
       
       pip install higlass-manage
 
@@ -28,7 +28,7 @@ tasks:
   - name: Install Nextflow
   # https://www.nextflow.io/docs/latest/getstarted.html
     init: |
-      cd /workspace/treeval-curation/
+      cd /workspace/genome-note-publications
       
       wget -qO- https://get.nextflow.io | bash
 
@@ -102,7 +102,7 @@ tasks:
   - name: Install Genome Note Pipeline
   # https://github.com/sanger-tol/curationpretext
     init: |
-      cd /workspace/treeval-curation/
+      cd /workspace/genome-note-publications
 
       git clone -b 1.2.2 https://github.com/sanger-tol/genomenote.git
 
