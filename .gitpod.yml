@@ -122,11 +122,7 @@ tasks:
     init: gp sync-await bundle # Wait for previous 'inits' to complete
     command: |
       cd /workspace
-      sleep 5
-      source ${HOME}/.bashrc
-      /workspace/mambaforge/bin/mamba init bash
-
-      sleep 5
+      
       source ${HOME}/.bashrc
       mamba activate btk
 
