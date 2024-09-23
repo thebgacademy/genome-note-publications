@@ -37,7 +37,7 @@ tasks:
       sudo mv nextflow /usr/local/bin
 
   - name: SETUP - btk install mamba and docker pull
-    init: |
+    init: | 
       cd /workspace
       wget "https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh"
       bash Mambaforge-$(uname)-$(uname -m).sh -b -p /workspace/mambaforge && rm Mambaforge-$(uname)-$(uname -m).sh
@@ -53,10 +53,11 @@ tasks:
       DOCKERVERSION=latest
       docker pull genomehubs/blobtoolkit-api:$DOCKERVERSION
       docker pull genomehubs/blobtoolkit-viewer:$DOCKERVERSION
-      gp sync-done bundle
+      gp sync-done step1
   
   - name: SETUP - docker run
     command: |
+      gp sync-await step1
       API_PORT=8000
       PORT=8080
       VIEWERURL=$(gp url $PORT)
@@ -97,7 +98,7 @@ tasks:
       genomehubs/blobtoolkit-viewer:$DOCKERVERSION && gp preview $VIEWERURL/view/all#Datasets
       /workspace/mambaforge/bin/mamba init bash
       source ${HOME}/.bashrc
-      gp sync-done bundle
+      gp sync-await step2
 
   - name: Install Genome Note Pipeline
   # https://github.com/sanger-tol/curationpretext
@@ -119,9 +120,7 @@ tasks:
     # Installing click and ruff in the mamba environment didn't work for some reason
     # It is much easier to install via that mamba env's pip3
     # and then install pretext-to-tpf
-    init: gp sync-await bundle # Wait for previous 'inits' to complete
-    dependsOn: 
-    - SETUP - btk install mamba and docker pull
+    init: gp sync-await step3 # Wait for previous 'inits' to complete
     command: |
       cd /workspace
       
