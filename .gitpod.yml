@@ -45,11 +45,7 @@ tasks:
 
       source ${HOME}/.bashrc
 
-      mamba create -n tiara -c conda-forge tiara python=3.7 -y
       conda create -y -n btk -c conda-forge python=3.9
-
-      cd /workspace
-      curl https://sk13.cog.sanger.ac.uk/glClaSqua9.tgz | tar xzf -
 
       cd /workspace
       git clone https://github.com/blobtoolkit/blobtoolkit btk_example
@@ -114,6 +110,10 @@ tasks:
     init: |
       gp preview https://www.thebgacademy.org/BGA24/sessions/genome-note-publications-24
 
+  - name: Install LibreOffice # VSCode extensions arn't working
+    command: |
+      sudo apt-get update && sudo apt-get install libreoffice -y
+
   - name: MAIN - TERMINAL TO USE
     # Installing click and ruff in the mamba environment didn't work for some reason
     # It is much easier to install via that mamba env's pip3
@@ -124,7 +124,7 @@ tasks:
       chmod a+x *.pl *.py
       /workspace/mambaforge/bin/mamba init bash
       source ${HOME}/.bashrc
-      conda activate btk
+      mamba activate btk
       pip install "blobtoolkit[full]"
       export PATH=/workspace:$PATH
       echo "WELCOME TO THE GENOME_NOTE_PUBLICATIONS SESSION!"
