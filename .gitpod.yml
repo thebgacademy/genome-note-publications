@@ -104,7 +104,7 @@ tasks:
     init: |
       cd /workspace/genome-note-publications
       git clone -b 1.2.2 https://github.com/sanger-tol/genomenote.git
-       gp sync-done step2
+      gp sync-done step2
 
   - name: Pre-download some data
   # https://github.com/sanger-tol/curationpretext
