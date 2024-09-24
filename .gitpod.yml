@@ -53,11 +53,11 @@ tasks:
       DOCKERVERSION=latest
       docker pull genomehubs/blobtoolkit-api:$DOCKERVERSION
       docker pull genomehubs/blobtoolkit-viewer:$DOCKERVERSION
-      gp sync-done step1
+      gp sync-done conda_btk
   
   - name: SETUP - docker run
     command: |
-      gp sync-await step1
+      gp sync-await conda_btk
       API_PORT=8000
       PORT=8080
       VIEWERURL=$(gp url $PORT)
@@ -102,10 +102,10 @@ tasks:
   - name: Install Genome Note Pipeline
   # https://github.com/sanger-tol/curationpretext
     init: |
-      gp sync-await step1
+      gp sync-await conda_btk
       cd /workspace/genome-note-publications
       git clone -b 1.2.2 https://github.com/sanger-tol/genomenote.git
-      gp sync-done step2
+      gp sync-done pipeline
 
   - name: Pre-download some data
   # https://github.com/sanger-tol/curationpretext
@@ -131,7 +131,7 @@ tasks:
     # Installing click and ruff in the mamba environment didn't work for some reason
     # It is much easier to install via that mamba env's pip3
     # and then install pretext-to-tpf
-    init: gp sync-await step2 # Wait for previous 'inits' to complete
+    init: gp sync-await pipeline
     command: |
       cd /workspace
       
@@ -148,7 +148,6 @@ vscode:
     - codezombiech.gitignore # Language support for .gitignore files
     # - cssho.vscode-svgviewer                 # SVG viewer
     - esbenp.prettier-vscode # Markdown/CommonMark linting and style checking for Visual Studio Code
-    - shahilkumar.docxreader
     - EditorConfig.EditorConfig # override user/workspace settings with settings found in .editorconfig files
     - Gruntfuggly.todo-tree # Display TODO and FIXME in a tree view in the activity bar
     - mechatroner.rainbow-csv # Highlight columns in csv files in different colors
