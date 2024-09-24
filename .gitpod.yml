@@ -102,9 +102,10 @@ tasks:
   - name: Install Genome Note Pipeline
   # https://github.com/sanger-tol/curationpretext
     init: |
+      gp sync-await step1
       cd /workspace/genome-note-publications
       git clone -b 1.2.2 https://github.com/sanger-tol/genomenote.git
-       gp sync-done step2
+      gp sync-done step2
 
   - name: Pre-download some data
   # https://github.com/sanger-tol/curationpretext
@@ -123,16 +124,14 @@ tasks:
       gp preview https://www.thebgacademy.org/BGA24/sessions/genome-note-publications-24
 
   - name: Install LibreOffice # VSCode extensions arn't working
-    init: gp sync-await step2
     command: |
       sudo apt-get update && sudo apt-get install libreoffice -y
-      gp sync-done step3
 
   - name: MAIN - TERMINAL TO USE
     # Installing click and ruff in the mamba environment didn't work for some reason
     # It is much easier to install via that mamba env's pip3
     # and then install pretext-to-tpf
-    init: gp sync-await step3 # Wait for previous 'inits' to complete
+    init: gp sync-await step2 # Wait for previous 'inits' to complete
     command: |
       cd /workspace
       
