@@ -9,22 +9,8 @@ ports:
   description: BlobToolKit Viewer
   port: 8080
   visibility: public
-- name: HiGlass
-  description: The HiGlass port
-  port: 8989
-  onOpen: open-browser
-  visibility: public
 
 tasks:
-  - name: Install HiGlass
-  # https://docs.higlass.io/tutorial.html
-    init: |
-      cd /workspace/genome-note-publications
-      
-      pip install higlass-manage
-
-      higlass-manage start
-
   - name: Install Nextflow
   # https://www.nextflow.io/docs/latest/getstarted.html
     init: |
