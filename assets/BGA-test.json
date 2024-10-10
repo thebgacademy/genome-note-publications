@@ -1,7 +1,7 @@
 {
   "input": "/workspace/genome-note-publications/assets/samplesheet.csv",
-  "fasta": "/workspace/genome-note-publications/data/GCA_963859965.1.fasta.gz",
-  "kmer": 11,	
+  "fasta": ""https://tolit.cog.sanger.ac.uk/test-data/Ceramica_pisi/assembly/release/ilCerPisi1.1/insdc/GCA_963859965.1.fasta.gz",
+  "kmer_size": 11,	
   "assembly": "GCA_963859965.1", 
   "biosample_wgs": "SAMEA112198456",
   "biosample_hic": "SAMEA112198479",
