@@ -46,7 +46,7 @@ tasks:
       
 
   - name: Open Tutorial Page
-    init: |
+    command: |
       gp preview https://www.thebgacademy.org/BGA24/sessions/genome-note-24
 
   - name: Install LibreOffice # VSCode extensions arn't working
