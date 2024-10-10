@@ -26,7 +26,7 @@ By the end of this part you will have:
 2. Understood the purpose of a genome note and the information it reports
 3. Gained an idea of why automating genome note production is important and how this can be achieved
 
-## Part 2: Hands on - Running the sanger-tol/genomenote pipeline and esploring the outputs
+## Part 2: Hands on - Running the sanger-tol/genomenote pipeline and exploring the outputs
 
 By the end of this part you will be able to:
 
