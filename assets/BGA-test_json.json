@@ -1,5 +1,5 @@
 {
-  "input": "/workspace/genome-note-publications/data/samplesheet.csv",
+  "input": "/workspace/genome-note-publications/assets/samplesheet.csv",
   "fasta": "/workspace/genome-note-publications/data/GCA_963859965.1.fasta.gz",
   "kmer": 11,	
   "assembly": "GCA_963859965.1", 
