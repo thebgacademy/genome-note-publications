@@ -60,7 +60,7 @@ tasks:
     # and then install pretext-to-tpf
     init: gp sync-await pipeline
     command: |
-      cd /workspace
+      cd /workspace/genome-note-publications
       
       source ${HOME}/.bashrc
       mamba activate genomenote
