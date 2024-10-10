@@ -49,10 +49,6 @@ tasks:
     init: |
       gp preview https://www.thebgacademy.org/BGA24/sessions/genome-note-24
 
-  - name: Install LibreOffice # VSCode extensions arn't working
-    command: |
-      sudo apt install -y at-spi2-core
-      sudo apt-get update && sudo apt-get install libreoffice -y
 
   - name: MAIN - TERMINAL TO USE
     # Installing click and ruff in the mamba environment didn't work for some reason
