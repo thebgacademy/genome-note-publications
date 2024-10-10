@@ -1,0 +1,10 @@
+{
+  "input": "/workspace/genome-note-publications/data/samplesheet.csv",
+  "fasta": "/workspace/genome-note-publications/data/GCA_963859965.1.fasta.gz",
+  "kmer": 11,	
+  "assembly": "GCA_963859965.1", 
+  "biosample_wgs": "SAMEA112198456",
+  "biosample_hic": "SAMEA112198479",
+  "biosample_rna": "SAMEA112232914",
+  "note_template": "/workspace/genome-note-publications/genomenote/assets/genome_note_template.docx"
+}
