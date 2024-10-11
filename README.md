@@ -43,10 +43,12 @@ By the end of this part you will be able to:
 
 ## Useful links 
 
+- The [sanger-tol/genomenote pipeline](https://pipelines.tol.sanger.ac.uk/). 
 - The published [genome note](https://wellcomeopenresearch.org/articles/9-539) for the species used in this session.
 - The HiGlass link to the [Hi-C map](https://genome-note-higlass.tol.sanger.ac.uk/l/?d=N0lSy7fGQ7SSE1afN54MCg) for the species used in this session.
-- The [sanger-tol pipelines website](https://pipelines.tol.sanger.ac.uk/) 
-
+- The [Blobtool viewer](https://blobtoolkit.genomehubs.org/view/GCA_963859965.1/dataset/GCA_963859965.1/blob#Filters) for the species used in this session.
+- The [Genome After Party](https://gap.cog.sanger.ac.uk/Ceramica_pisi/) for the species used in this session
+  
 ## Prerequisites
 
 1. Familiarity with linux command line basics (cd, mv, rm)
